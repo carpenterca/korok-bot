@@ -8,6 +8,7 @@ Tweeting certain keywords to Kula will also have him respond back to you.
 
 ### Interacting with Kula
 To use the existing bot, a user can simply follow [Kula](https://twitter.com/kula_the_korok) on Twitter. Kula will respond to the follow request and follow the user back.
+
 ![Kula Follow Request](https://carpentercacsci.files.wordpress.com/2018/01/kula_friends.jpg)
 
 Kula will also scan for @replies directed at him. If a user tweets an @reply that includes an achievement word:
