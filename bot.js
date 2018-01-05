@@ -184,7 +184,6 @@ fs.readdir(__dirname + '/koroks', function(err, files) {
       korokImages.push(f);
     });
     console.log("Looked at list of Koroks to find...");
-    FindKoroks(korokImages);
     setInterval(function() {
       FindKoroks(korokImages);
     }, KOROK_INTERVAL);
