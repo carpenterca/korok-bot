@@ -63,7 +63,7 @@ const kulas_new_friend = [
   "You remind me of Mr. Hero!",
   "It's nice to meet you! Twee hee!",
   "I found this apple for you!",
-  "Let's go to Korok Forest!",
+  "Let's go to the Korok Forest!",
   "Let's play hide and seek!"
 ];
 // Kula is told to stop following someone
@@ -285,16 +285,15 @@ function tweetEvent(tweet) {
   if (tweet.user.screen_name != bot_name) { // Make sure Kula did not make the tweet
     if (!tweet.retweeted) { // Make sure the tweet is an original tweet
       if(!tweet.possibly_sensitive) { // Make sure tweet does not link to mature content
-        // like the tweet
-        kula.post('favorites/create', {
+        // uncomment to like any tweet made from followers and @bot
+        /*kula.post('favorites/create', {
           id: tweet.id_str
         });
-        console.log('Kula liked a tweet!');
+        console.log('Kula liked a tweet!');*/
 
         // parse tweet to figure out a response
         text = text.replace(/[^a-zA-Z\s]/gi, "").toLowerCase();
         let tweet_words = text.split(' ');
-        console.log(tweet_words);
 
         if (reply_to !== null && reply_to === bot_name) { // If the tweet was @reply to Bot
           // Kula encourages those going on journey alone
@@ -310,8 +309,15 @@ function tweetEvent(tweet) {
     						}
     					});
               console.log('Kula unfollowed ' + from);
+              return false;
     				}
     			}
+
+          // Tweet was to Kula and is not to unfollow, so Kula likes it
+          kula.post('favorites/create', {
+            id: tweet.id_str
+          });
+          console.log('Kula liked a tweet!');
 
           // Kula chats with a traveler
     			for (let k = 0; k < tweet_words.length; k++) { // For each word in the tweet
