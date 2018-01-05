@@ -1,0 +1,28 @@
+{
+  "name": "kula",
+  "version": "1.0.0",
+  "description": "Kula sets out on a journey to find his friends and you.",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js"
+  },
+  "author": "Cory Carpenter",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carpenterca/korok-bot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/carpenterca/korok-bot/issues"
+  },
+  "homepage": "https://github.com/carpenterca/korok-bot",
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "fs": "0.0.1-security",
+    "path": "^0.12.7",
+    "twit": "^2.2.5"
+  },
+  "engines": {
+    "node": "7.9.0"
+  }
+}
